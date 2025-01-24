@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios CSS Grid</title>
+  <style>
+    /* Exercício 1 - Grid Básico */
+    .grid-container-basic {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 100px 100px;
+      gap: 10px;
+      margin-bottom: 50px;
+    }
+    .item {
+      background-color: #007bff;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ddd;
+    }
+
+    /* Exercício 2 - Layout com Áreas Nomeadas */
+    .grid-container-areas {
+      display: grid;
+      grid-template-areas:
+        "header header header"
+        "menu main main"
+        "footer footer footer";
+      grid-template-columns: 1fr 2fr 2fr;
+      grid-template-rows: 50px 1fr 30px;
+      gap: 10px;
+      margin-bottom: 50px;
+    }
+    .header, .menu, .main, .footer {
+      padding: 10px;
+      text-align: center;
+    }
+    .header { background-color: #343a40; color: white; }
+    .menu { background-color: #ffc107; }
+    .main { background-color: #20c997; }
+    .footer { background-color: #6f42c1; color: white; }
+
+    /* Exercício 3 - Ajustar Tamanhos de Colunas e Linhas */
+    .grid-container-size {
+      display: grid;
+      grid-template-columns: 100px 2fr 1fr;
+      grid-template-rows: 50px 150px;
+      gap: 5px;
+      margin-bottom: 50px;
+    }
+    .item-size {
+      background-color: #17a2b8;
+      text-align: center;
+      color: white;
+      line-height: 50px;
+    }
+
+    /* Exercício 4 - Posicionar Itens Especificamente */
+    .grid-container-position {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 100px);
+      gap: 10px;
+      margin-bottom: 50px;
+    }
+    .item-position {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      line-height: 100px;
+    }
+    .item1 { grid-column: span 2; }
+    .item6 { grid-column: 1 / -1; }
+
+    /* Exercício 5 - Layout Responsivo */
+    .grid-container-responsive {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-bottom: 50px;
+    }
+    .item-responsive {
+      background-color: #e83e8c;
+      color: white;
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    /* Exercício 6 - Dashboard Simples */
+    .grid-container-dashboard {
+      display: grid;
+      grid-template-areas:
+        "header header header"
+        "sidebar main-content widget"
+        "footer footer footer";
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: 50px 1fr 50px;
+      gap: 10px;
+      margin-bottom: 50px;
+    }
+    .header { background-color: #343a40; color: white; }
+    .sidebar { background-color: #007bff; color: white; }
+    .main-content { background-color: #20c997; color: white; }
+    .widget { background-color: #ffc107; color: white; }
+    .footer { background-color: #6f42c1; color: white; }
+    .grid-container-dashboard > div {
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Títulos para separar os exercícios */
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Exercício 1: Grid Básico -->
+  <h2>Exercício 1 - Grid Básico</h2>
+  <div class="grid-container-basic">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+  </div>
+
+  <!-- Exercício 2: Layout com Áreas Nomeadas -->
+  <h2>Exercício 2 - Layout com Áreas Nomeadas</h2>
+  <div class="grid-container-areas">
+    <div class="header">Header</div>
+    <div class="menu">Menu</div>
+    <div class="main">Main</div>
+    <div class="footer">Footer</div>
+  </div>
+
+  <!-- Exercício 3: Ajustar Tamanhos de Colunas e Linhas -->
+  <h2>Exercício 3 - Ajustar Tamanhos de Colunas e Linhas</h2>
+  <div class="grid-container-size">
+    <div class="item-size">1</div>
+    <div class="item-size">2</div>
+    <div class="item-size">3</div>
+    <div class="item-size">4</div>
+    <div class="item-size">5</div>
+    <div class="item-size">6</div>
+  </div>
+
+  <!-- Exercício 4: Posicionar Itens Especificamente -->
+  <h2>Exercício 4 - Posicionar Itens Especificamente</h2>
+  <div class="grid-container-position">
+    <div class="item-position item1">1</div>
+    <div class="item-position item2">2</div>
+    <div class="item-position item3">3</div>
+    <div class="item-position item4">4</div>
+    <div class="item-position item5">5</div>
+    <div class="item-position item6">6</div>
+  </div>
+
+  <!-- Exercício 5: Layout Responsivo -->
+  <h2>Exercício 5 - Layout Responsivo</h2>
+  <div class="grid-container-responsive">
+    <div class="item-responsive">1</div>
+    <div class="item-responsive">2</div>
+    <div class="item-responsive">3</div>
+    <div class="item-responsive">4</div>
+    <div class="item-responsive">5</div>
+    <div class="item-responsive">6</div>
+    <div class="item-responsive">7</div>
+    <div class="item-responsive">8</div>
+    <div class="item-responsive">9</div>
+    <div class="item-responsive">10</div>
+    <div class="item-responsive">11</div>
+    <div class="item-responsive">12</div>
+  </div>
+
+  <!-- Exercício 6: Dashboard Simples -->
+  <h2>Exercício 6 - Dashboard Simples</h2>
+  <div class="grid-container-dashboard">
+    <div class="header">Header</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="main-content">Main Content</div>
+    <div class="widget">Widget 1</div>
+    <div class="widget">Widget 2</div>
+    <div class="footer">Footer</div>
+  </div>
+
+</body>
+</html>
