@@ -1,113 +1,92 @@
+/* --- Exercício 1: Criar um Grid Básico --- */
+.grid-container-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px;
+    gap: 10px;
+}
+.item {
+    background-color: #64afff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+}
 
-    .grid-container-basic {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 100px 100px;
-      gap: 10px;
-      margin-bottom: 50px;
-    }
-    .item {
-      background-color: #007bff;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #ddd;
-    }
-
-    /* Exercício 2 - Layout com Áreas Nomeadas */
-    .grid-container-areas {
-      display: grid;
-      grid-template-areas:
+/* --- Exercício 2: Layout com Áreas Nomeadas --- */
+.grid-container-2 {
+    display: grid;
+    grid-template-areas:
         "header header header"
         "menu main main"
         "footer footer footer";
-      grid-template-columns: 1fr 2fr 2fr;
-      grid-template-rows: 50px 1fr 30px;
-      gap: 10px;
-      margin-bottom: 50px;
-    }
-    .header, .menu, .main, .footer {
-      padding: 10px;
-      text-align: center;
-    }
-    .header { background-color: #343a40; color: white; }
-    .menu { background-color: #ffc107; }
-    .main { background-color: #20c997; }
-    .footer { background-color: #6f42c1; color: white; }
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 50px 1fr 30px;
+    gap: 10px;
+}
+.header { grid-area: header; background-color: #343a40; color: white; }
+.menu { grid-area: menu; background-color: #ffc107; }
+.main { grid-area: main; background-color: #20c997; }
+.footer { grid-area: footer; background-color: #6f42c1; color: white; }
 
-    /* Exercício 3 - Ajustar Tamanhos de Colunas e Linhas */
-    .grid-container-size {
-      display: grid;
-      grid-template-columns: 100px 2fr 1fr;
-      grid-template-rows: 50px 150px;
-      gap: 5px;
-      margin-bottom: 50px;
-    }
-    .item-size {
-      background-color: #17a2b8;
-      text-align: center;
-      color: white;
-      line-height: 50px;
-    }
+/* --- Exercício 3: Ajustar Tamanhos de Colunas e Linhas --- */
+.grid-container-3 {
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr;
+    grid-template-rows: 50px 150px;
+    gap: 5px;
+}
+.item-3 {
+    background-color: #17a2b8;
+    text-align: center;
+    color: white;
+    line-height: 50px;
+}
 
-    /* Exercício 4 - Posicionar Itens Especificamente */
-    .grid-container-position {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 100px);
-      gap: 10px;
-      margin-bottom: 50px;
-    }
-    .item-position {
-      background-color: #007bff;
-      color: white;
-      text-align: center;
-      line-height: 100px;
-    }
-    .item1 { grid-column: span 2; }
-    .item6 { grid-column: 1 / -1; }
+/* --- Exercício 4: Posicionar Itens Especificamente --- */
+.grid-container-4 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+}
+.item1 { grid-column: span 2; background-color: #007bff; color: white; display: flex; align-items: center; justify-content: center; }
+.item6 { grid-column: 1 / -1; background-color: #28a745; color: white; display: flex; align-items: center; justify-content: center; }
+.item-4 { background-color: #6f42c1; color: white; display: flex; align-items: center; justify-content: center; }
 
-    /* Exercício 5 - Layout Responsivo */
-    .grid-container-responsive {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
-      margin-bottom: 50px;
-    }
-    .item-responsive {
-      background-color: #e83e8c;
-      color: white;
-      height: 100px;
-      text-align: center;
-      line-height: 100px;
-    }
+/* --- Exercício 5: Layout Responsivo --- */
+.grid-container-5 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+.item-5 {
+    background-color: #e83e8c;
+    color: white;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
 
-    /* Exercício 6 - Dashboard Simples */
-    .grid-container-dashboard {
-      display: grid;
-      grid-template-areas:
+/* --- Exercício 6: Dashboard Simples --- */
+.grid-container-6 {
+    display: grid;
+    grid-template-areas:
         "header header header"
         "sidebar main-content widget"
         "footer footer footer";
-      grid-template-columns: 1fr 2fr 1fr;
-      grid-template-rows: 50px 1fr 50px;
-      gap: 10px;
-      margin-bottom: 50px;
-    }
-    .header { background-color: #343a40; color: white; }
-    .sidebar { background-color: #007bff; color: white; }
-    .main-content { background-color: #20c997; color: white; }
-    .widget { background-color: #ffc107; color: white; }
-    .footer { background-color: #6f42c1; color: white; }
-    .grid-container-dashboard > div {
-      padding: 10px;
-      text-align: center;
-    }
-
-    /* Títulos para separar os exercícios */
-    h2 {
-      text-align: center;
-      margin: 30px 0;
-    }
-  
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 50px 1fr 50px;
+    gap: 10px;
+}
+.header { grid-area: header; background-color: #343a40; color: white; }
+.sidebar { grid-area: sidebar; background-color: #ffc107; }
+.main-content { grid-area: main-content; background-color: #20c997; }
+.widget { grid-area: widget; background-color: #007bff; }
+.footer { grid-area: footer; background-color: #6f42c1; color: white; }
+.grid-container-6 > div {
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
